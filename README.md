@@ -6,7 +6,7 @@ Here you can find the slides and the resources (``resources.tex``) for the cours
 
 The folders ``Chapter 0``, ``Chapter 1``, ``Chapter 2``, ``Chapter 3`` contain the source .tex and .pdf files.
 > [!IMPORTANT]
-> * ``Chapter 0``: "Some brief recalls (Sandbox).
+> * ``Chapter 0``: "Some brief recalls (Sandbox)".
 > * ``Chapter 1``: "Basic of real analysis of several variables".
 > * ``Chapter 2``: "Ordinary Differential Equations".
 > * ``Chapter 3``: "Complex Analysis".
