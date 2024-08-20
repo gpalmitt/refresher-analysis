@@ -1,0 +1,267 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+%\usefonttheme{structuresmallcapsserif}
+%\usetheme{Madrid}
+\reversemarginpar
+\usetheme{Madrid}
+\usecolortheme{whale}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{eurosym}
+\usepackage{pifont}
+\usepackage{fancybox}
+\usepackage{multicol}
+\usepackage{amsmath, mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{pifont, amsfonts, eufrak}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{amssymb,latexsym } 
+\usepackage{rotating}
+\usepackage{bbm}
+\usepackage{cases}
+\usepackage{pifont}
+%\usepackage{mathabx}
+\usepackage{dsfont}
+%\usepackage{fourier, heuristica}
+\usepackage{array, booktabs}
+%\DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
+
+\newcommand{\foo}{\color{blue}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+
+\usepackage{etoolbox}
+
+\newcommand\Pitem{%
+  \addtocounter{enumi}{-1}%
+  \renewcommand\theenumi{\arabic{enumi}'}%
+  \item%
+  \renewcommand\theenumi{\arabic{enumi}}%
+}
+
+\definecolor{or}{rgb}{1.0, 0.4, 0.0}
+\definecolor{greng}{rgb}{0.0, 0.62, 0.38}
+\definecolor{gro}{rgb}{0.77, 0.76, 0.75}
+\definecolor{blo}{rgb}{0.15, 0.38, 0.61}
+\definecolor{roud}{rgb}{0.81, 0.06, 0.13}
+
+%\usepackage{lmodern}
+%\newcommand\itemshape[1]{%
+%\setbeamertemplate{itemize item}[#1]{%
+%\usebeamertemplate{itemize item}
+%}
+
+\def\X#1{%
+        %#1%
+        %\textcircled{#1}%
+        \raisebox{.9pt}{\textcircled{\raisebox{-.9pt}{#1}}}%
+        %\ding{\numexpr171+#1\relax}%
+}
+
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+\usepackage{caption}
+\usetikzlibrary{shapes,arrows}
+\usepackage[all]{xy}
+
+\setbeamertemplate{navigation symbols}{}
+
+\DeclareMathOperator{\spn}{span}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\CC}{\mathbf{C}}
+
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\DD}{\mathcal{D}}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\kk}{\mathfrak{k}}
+\newcommand{\aL}{\mathfrak{a}}
+\newcommand{\End}{\text{End}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\Hol}{\text{Hol}}
+\newcommand{\Pol}{\text{Pol}}
+\newcommand{\opp}{\text{opp}}
+\newcommand{\Ad}{\text{Ad}}
+\newcommand{\Ker}{\text{Ker}}
+\newcommand{\Impart}{\text{Im}}
+\newcommand{\Repart}{\text{Re}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\Mat}{\text{Mat}}
+\newcommand{\Tr}{\text{Tr}}
+\newcommand{\Id}{\text{Id}}
+\newcommand{\rk}{\text{rk}}
+\newcommand{\diag}{\text{diag}}
+\newcommand*{\QEDA}{\null\nobreak\hfill\ensuremath{\square}}%
+
+
+\setbeamertemplate{theorems}[numbered] 
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+\logo{\includegraphics[height=1cm]{dmath}}
+\title[Refresher Courses in Analysis] %optional
+{Chapter 0: Some brief recalls (``Sandbox")}
+
+\subtitle{Refresher Courses in Analysis}
+\author[Guendalina \textsc{Palmirotta}]{Guendalina \textsc{Palmirotta}}
+\institute[]{University of Luxembourg, Department of Mathematics}
+\date[]{\today}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+{\nologo
+
+
+%\begin{frame}
+%\frametitle{Contents}
+%\tableofcontents
+%\end{frame}
+
+\section{0.1.  Some recall on metric spaces}
+
+\begin{frame}
+\frametitle{Definitions and properties of metric spaces}
+\begin{alertblock}{Definition 1}
+\begin{itemize}
+\item (distance) Let $X$ be a non-empty space.
+A \textbf{distance} $d: X \times X \rightarrow [0, \infty)$ verifies the 3 properties: $\forall x,y,z \in X$:
+\begin{itemize}
+\item[(i)] symmetry: $d(x,y)=d(x,y)$.
+\item[(ii)] pos.  definiteness: $d(x,y)=0 \iff x=y$.
+\item[(iii)] $\Delta$-inequality: $d(x,y) \leq d(x,z)+d(z,y).$
+\end{itemize}
+\item (metric space) If $d$ is a distance on $X$, then $(X,d)$ is a \textbf{metric space}.
+\item (Cauchy seq.) $(x_n)_{n\in \N}$ is a \textbf{Cauchy seq. }:
+$\forall \epsilon >0 \;\exists N \in \N$ s.t.  $\forall n,m \in \N$
+$$d(x_n,x_m) < \epsilon.$$
+\item (completeness) A metric space $(X,d)$ is \textbf{complete} if every Cauchy seq. in $X$ converges in $X$.
+\end{itemize}
+\end{alertblock}
+\vspace{0.2cm}
+\begin{block}{Proposition 1}
+Let $(X,d)$ be a complete metric space.\\
+If $Y$ is a closed subset of $X$ then $(Y,d)$ is a complete metric space.
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Continuity and Lipschitz continuity}
+\begin{alertblock}{Definition 2}
+Let $(X,d_x)$ and $(Y,d_y)$ be 2 metric spaces. 
+\begin{itemize}
+\item (continuity) A function $f:X \rightarrow Y$ is \textbf{continuous} in $x_0 \in X$ if $\forall \epsilon >0 \; \exists \delta >0$ s.t.  $d_x(x_0,x) < \delta$ then $$d_y(f(y_0),f(x)) < \epsilon.$$
+If $f$ is continuous in $x_0, \; \forall x_0\in X$, we say that $f$ is continuous on $X$.
+\item (Lipschitz cont.) A function  $f:X \rightarrow Y$ is \textbf{Lipschitz continuous} $\iff \exists$ a constant $L \in [0,\infty)$ s.t. $\forall x_1,x_2 \in X$, we have
+$$d_y(f(x_1),f(x_2)) \leq L d_x(x_1,x_2).$$
+L is called the \textbf{Lipschitz constant}.
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{Metric spaces of bounded continuous functions}
+%\textcolor{red}{[to do]}
+%\end{frame}
+
+
+\section{0.2.  Some recall on normed vector spaces and operators}
+
+\begin{frame}
+\frametitle{Definitions and properties of normed vector spaces}
+\begin{alertblock}{Definition 3}
+Let $V$ be a non-empty vector space (v.s.).
+\begin{itemize}
+\item (norm) A \textbf{norm} on $V$ is a function $||\cdot||:V \rightarrow [0, \infty)$ satisfying the 3 axioms: $\forall x,y \in V$ and $\lambda \in \R$
+\begin{itemize}
+\item[(i)] pos. definiteness: $||x||=0 \Rightarrow x=0$.
+\item[(ii)] absolute homogeneity: $||\lambda x||=|\lambda| ||x||$.
+\item[(iii)] $\Delta$-ineq. : $||x+y||\leq ||x||+||y||$.
+\end{itemize}
+\item (normed v.s.) If $||\cdot||$ is a norm on $V$, then $(V,||\cdot||)$ is a \textbf{normed v.s.}.
+\item (Banach space) A \textbf{Banach space} is complete normed v.s.
+\item (linear maps and operators) Let $(V,||\cdot||_V), (W,||\cdot||_W)$ be 2 finite-dimensional normed v.s. over $\R$ or $\C$.  Denote by $\mathcal{L}(V,W)$ be the \textbf{v.s. of linear map} $A:V \rightarrow W$.
+We define the \textbf{operator} of $A$ by
+$$||A||_{\text{op}}=||A||:=\sup\{||Av||_{W}| v\in V, ||v||=1\}.$$
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Examples}
+\begin{itemize}
+\item[\textcolor{blue}{(1)}] Typical distances:
+\begin{eqnarray*}
+d_2:(x,y) &\mapsto& \sqrt{\sum_{i=1}^n |x_i-y_i|^2}, \;n\in \N\text{ (Euclidean distance on $\R^n$)}\\
+d_p:(x,y) &\mapsto& \Big(\sum_{i=1}^n |x_i-y_i|^p\Big)^{1/p}, \;p\in [1,\infty) \text{ (generalization)}\\
+d_\infty: (x,y) &\mapsto& \max_{i\in\{1, \dots,n\}} |x_i-y_i|, \;n\in \N.
+\end{eqnarray*}
+\item[\textcolor{blue}{(2)}] The corresponding normed distances:
+\begin{eqnarray*}
+||\cdot||_2=d_2:x &\mapsto& \sqrt{\sum_{i=1}^n |x_i|^2}, \;n\in \N\text{ (Euclidean norm on $\R^n$)}\\
+||\cdot||_p=d_p:x &\mapsto& \Big(\sum_{i=1}^n |x_i|^p\Big)^{1/p}, \;p\in [1,\infty)\\
+||\cdot||_\infty=d_\infty: x &\mapsto& \max_{i\in\{1, \dots,n\}} |x_i|,  \;n\in \N.
+\end{eqnarray*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some important properties}
+\begin{itemize}
+\item Property of normed operators
+\end{itemize}
+\begin{block}{Proposition 2}
+Let $(V,||\cdot||_V), (W,||\cdot||_W)$ 2 f.-d.  normed v.s. over $\R$ or $\C$ and 
+$||A||_{\mathcal{L}(V,W)} <\infty \; \forall A \in \mathcal{L}(V,W)$.
+\textbf{Then},  for every $v\in V$, we have
+$$||Av||_W \leq ||A||_{\mathcal{L}(V,W)} \;||v||_W.$$
+\end{block}
+\begin{itemize}
+\item Connection between diff. and Lipschitz continuity
+\end{itemize}
+\begin{block}{Lemma 1}
+Let $U\subset \R^n$ be open, $f:U \rightarrow \R^k$ diff. fct. and $A \subset U$ convex s.t.
+$df|_A: A \rightarrow \mathcal{L}(\R^n,\R^k)$ \text{ is bounded},  i.e. $\exists C \; ||df(x)||_{\mathcal{L}(\R^n,\R^k)} \leq C \; \forall x\in A$.\\
+\textbf{Then}, $f$ is Lipschitz cont. on $A$ with Lipschitz constant
+$$L=\sup_{x\in A} ||df(x)||_{\mathcal{L}(\R^n,\R^k)}.$$
+\underline{In particular},  if $f$ is cont. diff., then $f$ is Lipschitz cont on each \textbf{compact} subset $A \subset U$, e.g. on closed balls.
+\end{block}
+\end{frame}
+
+
+
+
+
+
+}
+
+
+\end{document}
