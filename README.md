@@ -1,5 +1,5 @@
 # Refresher courses in analysis
-Here you can find the slides and the resources (``resources.tex``) for the course
+Here you can find the slides and the resources (``resources.pdf``) for the course
 "Refresher courses in Analysis" (University of Luxembourg, Winter-Semester 2023 & 2024).
 > [!NOTE]
 > The "Refresher courses in Analysis" was a 2-week course to refresh some key results in analysis (for first-year master students) at the University of Luxembourg.
