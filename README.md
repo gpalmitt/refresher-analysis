@@ -4,7 +4,7 @@ Here you can find the slides and the resources (``resources.pdf``) for the cours
 > [!NOTE]
 > The "Refresher courses in Analysis" was a 2-week course to refresh some key results in analysis (for first-year master students) at the University of Luxembourg.
 
-The folders ``Chapter 0``, ``Chapter 1``, ``Chapter 2``, ``Chapter 3`` contain the source .tex and .pdf files.
+The folders ``Chapter 0``, ``Chapter 1``, ``Chapter 2``, ``Chapter 3`` contain the .pdf file.
 > [!IMPORTANT]
 > * ``Chapter 0``: "Some brief recalls (Sandbox)".
 > * ``Chapter 1``: "Basic of real analysis of several variables".
